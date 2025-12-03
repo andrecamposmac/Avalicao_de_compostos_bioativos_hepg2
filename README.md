@@ -4,7 +4,7 @@ Este projeto visa desenvolver um modelo de Machine Learning capaz de prever a bi
 
 O projeto está estruturado em uma série de notebooks Jupyter que cobrem desde a coleta de dados até o ajuste fino do modelo final.
 
-## 📋 Estrutura do Projeto
+## Estrutura do Projeto
 
 O fluxo de trabalho foi dividido em 6 etapas principais:
 
@@ -40,7 +40,7 @@ O fluxo de trabalho foi dividido em 6 etapas principais:
     *   Seleção de features baseada em variância (VarianceThreshold) para reduzir a dimensionalidade.
     *   O modelo final alcançou um R-Squared próximo de 0.60 após a validação cruzada, confirmando sua capacidade preditiva.
 
-## 🛠 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 *   **Python 3**
 *   **Bioinformática:** `chembl_webresource_client`, `padelpy`.
@@ -48,7 +48,7 @@ O fluxo de trabalho foi dividido em 6 etapas principais:
 *   **Machine Learning:** `lazypredict`, `xgboost`, `lightgbm`.
 *   **Visualização:** `matplotlib`, `seaborn`.
 
-## 🚀 Como Executar
+## Como Executar
 
 Para reproduzir este estudo:
 1.  Clone o repositório e instale as dependências (recomenda-se criar um ambiente virtual).
@@ -56,7 +56,7 @@ Para reproduzir este estudo:
     *   *Nota:* A etapa 04 requer o software PaDEL instalado ou configurado corretamente via biblioteca python.
 3.  Os arquivos CSV intermediários (datasets processados) serão gerados a cada etapa para uso na seguinte.
 
-## 📊 Resultados Chave
+## Resultados Chave
 
 *   O projeto demonstrou que descritores químicos simplificados (fingerprints) conseguem capturar padrões estruturais correlacionados com a citotoxicidade em células HepG2.
 *   Modelos baseados em árvores (Random Forest, XGBoost) superaram modelos lineares tradicionais para este tipo de dado farmacológico.
