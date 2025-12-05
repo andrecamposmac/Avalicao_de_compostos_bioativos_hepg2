@@ -1,0 +1,88 @@
+Drug Discovery with Machine Learning – HepG2 Bioactivity
+This project aims to develop a Machine Learning model capable of predicting the bioactivity of chemical compounds against the HepG2 cell line (human hepatocellular carcinoma cells). The goal is to identify potential cytotoxic drug candidates through the analysis of their molecular structures.
+
+The project is structured into a series of Jupyter notebooks that cover everything from data collection to fine-tuning of the final model.
+
+Project Structure
+The workflow was divided into 6 main stages:
+
+Data Acquisition (01_obtencao_de_dados.ipynb):
+
+Data collection from the ChEMBL database (bioactive molecule library).
+
+Filtering by biological target: HepG2 cell line.
+
+Result: 25,862 compounds obtained with recorded activity.
+
+Data Handling (02_manipulacao_de_dados.ipynb):
+
+Initial dataset cleaning (removal of null values, duplicates, etc.).
+
+Classification of compounds into:
+
+Active: IC50 ≤ 1000 nM
+
+Inactive: IC50 ≥ 10000 nM
+
+Intermediate: 1000 nM < IC50 < 10000 nM
+
+Conversion of the IC50 metric to pIC50 (negative logarithmic scale) to facilitate modeling.
+
+Exploratory Data Analysis (03_analise_de_dados_exploratoria.ipynb):
+
+Analysis of physicochemical properties based on Lipinski’s Rule (Molecular Weight, LogP, Hydrogen Donors/Acceptors).
+
+Statistical tests (Mann–Whitney) to check for significant differences between active and inactive compounds.
+
+Visualization of the chemical distribution across the sample space.
+
+Data Preparation for ML (04_preparacao_de_dados_ML.ipynb):
+
+Calculation of molecular descriptors (fingerprints) using the PaDEL-Descriptor library.
+
+Generation of numerical vectors (e.g., PubChem Fingerprints) representing the chemical structures of molecules, making them readable by algorithms.
+
+Model Comparison (05_ml_comparacao.ipynb):
+
+Use of the LazyPredict library to test dozens of regression algorithms simultaneously.
+
+Evaluation using metrics such as R-squared and RMSE.
+
+Result: The RandomForestRegressor model stood out with an R-squared of approximately 0.62 on the test set.
+
+Fine Tuning (06_ml_fine_tuning.ipynb):
+
+Optimization of RandomForest hyperparameters (n_estimators, max_depth) via GridSearchCV.
+
+Feature selection based on variance (VarianceThreshold) to reduce dimensionality.
+
+The final model achieved an R-squared close to 0.60 after cross-validation, confirming its predictive capability.
+
+Technologies Used
+Python 3
+
+Bioinformatics: chembl_webresource_client, padelpy
+
+Data Science: pandas, numpy, scikit-learn, scipy
+
+Machine Learning: lazypredict, xgboost, lightgbm
+
+Visualization: matplotlib, seaborn
+
+How to Run
+To reproduce this study:
+
+Clone the repository and install dependencies (creating a virtual environment is recommended).
+
+Run the notebooks in numerical order (01 to 06).
+
+Note: Step 04 requires the PaDEL software to be installed or properly configured via the Python library.
+
+Intermediate CSV files (processed datasets) will be generated at each stage for use in the next one.
+
+Key Results
+The project demonstrated that simplified chemical descriptors (fingerprints) can capture structural patterns correlated with cytotoxicity in HepG2 cells.
+
+Tree-based models (Random Forest, XGBoost) outperformed traditional linear models for this type of pharmacological data.
+
+Author: André Campos Machado
