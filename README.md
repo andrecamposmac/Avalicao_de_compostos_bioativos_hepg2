@@ -1,5 +1,8 @@
 # Descoberta de Fármacos com Machine Learning - Bioatividade HepG2
 
+![PROJETO BIOQUIMICA](https://github.com/user-attachments/assets/b43ce6a9-4089-4a59-b9da-aabdb4cbf78d)
+
+
 Este projeto visa desenvolver um modelo de Machine Learning capaz de prever a bioatividade de compostos químicos frente à linhagem celular **HepG2** (células de carcinoma hepatocelular humano). O objetivo é identificar potenciais candidatos a fármacos citotóxicos através da análise de suas estruturas moleculares.
 
 O projeto está estruturado em uma série de notebooks Jupyter que cobrem desde a coleta de dados até o ajuste fino do modelo final.
